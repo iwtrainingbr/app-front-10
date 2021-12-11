@@ -9,6 +9,7 @@ import Report from "./pages/Report";
 import Register from "./pages/Register";
 import Help from "./pages/Help";
 
+import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
