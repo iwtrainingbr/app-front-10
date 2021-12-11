@@ -8,7 +8,7 @@ export default function Config() {
   <button class="btn btn-light">Claro</button>
     <hr/>
   <div class="">
-    <h1>Mudar Email<h1/><br/>
+    <h1>Mudar Email</h1><br/>
     <input type="text" name="" value=""/>
     <h1>Mudar Senha</h1>  <br/>
     <input type="text" name="" value=""/>
