@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import RecoverPassword from "./pages/RecoverPassword";
+import Report from "./pages/Report";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -13,9 +14,12 @@ export default function App() {
 
       <Routes>
         <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
+        <Route path="/relatorio" element={<Report/>}/>
 
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
+
+
       </Routes>
     </BrowserRouter>
   );
