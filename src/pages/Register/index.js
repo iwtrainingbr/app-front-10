@@ -1,8 +1,28 @@
 export default function Register (){
   return (
-    <div>
+    <div className="container">
      <h1>Cadastrar novo usuário</h1>
-     <hr/>
+    <hr/>
+
+     <form>
+       <div class="form-group mt-3">
+          <label>Nome</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome.."/>
+       </div>
+       <div class="form-group mt-3">
+          <label>Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nome@exemplo.com"/>
+       </div>
+       <div class="form-group mt-3">
+          <label for="exampleInputEmail1">Telefone</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: (85) 999530380"/>
+        <div class="col-sm-10 mt-3">
+          <label for="exampleInputEmail1">Senha</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Senha"/>
+         </div>
+       </div>
+     </form>
+
     </div>
   )
 }
