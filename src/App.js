@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import RecoverPassword from "./pages/RecoverPassword";
+import Report from "./pages/Report";
 import Register from "./pages/Register";
 import Help from "./pages/Help";
 
@@ -15,12 +16,12 @@ export default function App() {
 
       <Routes>
         <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
+        <Route path="/relatorio" element={<Report/>}/>
         <Route path="/cadastro" element={<Register/>}/>
-
         <Route path="ajuda" element={<Help/>}/>
+          
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
-        
       </Routes>
     </BrowserRouter>
   );
