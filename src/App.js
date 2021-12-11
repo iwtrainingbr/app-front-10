@@ -1,6 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Home from "./pages/Home";
+import Config from "./pages/Config";
 import NotFound from "./pages/NotFound";
 import RecoverPassword from "./pages/RecoverPassword";
 import Report from "./pages/Report";
@@ -15,6 +16,7 @@ export default function App() {
       Aqui vai o navbar
 
       <Routes>
+        <Route path="/config" element={<Config/>}/>
         <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
         <Route path="/relatorio" element={<Report/>}/>
         <Route path="/cadastro" element={<Register/>}/>
