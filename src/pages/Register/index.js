@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 export default function Register (){
   return (
     <div className="container">
@@ -22,7 +23,13 @@ export default function Register (){
          </div>
        </div>
      </form>
-
+    <div>
+      <Link to="/"><button className="btn btn-primary mt-3 mb-2">Enviar</button></Link>
+    </div>
+    <div>
+      <Link to="/login">Já tenho cadastro</Link>
+    </div>
+    
     </div>
   )
 }
