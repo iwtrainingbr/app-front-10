@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/relatorio" element={<Report/>}/>
         <Route path="/cadastro" element={<Register/>}/>
-        <Route path="ajuda" element={<Help/>}/>
+        <Route path="/ajuda" element={<Help/>}/>
           
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
