@@ -10,7 +10,7 @@ import Report from "./pages/Report";
 import Register from "./pages/Register";
 import Help from "./pages/Help";
 import Test from "./pages/Test";
-
+import AddCategory from"./pages/Categories/AddCategory";
 import "bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -27,6 +27,7 @@ export default function App() {
         <Route path="/cadastro" element={<Register/>}/>
         <Route path="/ajuda" element={<Help/>}/>
         <Route path="/teste" element={<Test/>}/>
+        <Route path="/categorias/nova" element={<AddCategory/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
