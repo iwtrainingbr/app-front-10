@@ -10,15 +10,14 @@ import Report from "./pages/Report";
 import Register from "./pages/Register";
 import Help from "./pages/Help";
 import Test from "./pages/Test";
-<<<<<<< HEAD
 import Fabricio from "./pages/Fabricio";
-=======
 import Daniel from "./pages/Daniel";
->>>>>>> 898a2b2 (Criando Page)
+import Hitalo from "./pages/Hitalo";
 
 import "bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
+//Para que o programa funcione, é preciso importar e colocar o PATH
 export default function App() {
   return (
     <BrowserRouter>
@@ -32,9 +31,10 @@ export default function App() {
         <Route path="/cadastro" element={<Register/>}/>
         <Route path="/ajuda" element={<Help/>}/>
         <Route path="/teste" element={<Test/>}/>
-        <Route path="/fabricio" element={<Fabricio/>}/>        
-        <Route path="/" element={<Home/>}/>
+        <Route path="/hitalo" element={<Hitalo/>}/>
+        <Route path="/fabricio" element={<Fabricio/>}/> 
         <Route path="/daniel" element={<Daniel/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
