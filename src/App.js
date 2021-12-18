@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import ListCategories from "./pages/Categories/ListCategories";
 import Config from "./pages/Config";
 import NotFound from "./pages/NotFound";
 import RecoverPassword from "./pages/RecoverPassword";
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/cadastro" element={<Register/>}/>
         <Route path="/ajuda" element={<Help/>}/>
         <Route path="/teste" element={<Test/>}/>
+        <Route path="/categorias" element={<ListCategories/>}/>
         <Route path="/hitalo" element={<Hitalo/>}/>
         <Route path="/fabricio" element={<Fabricio/>}/>
         <Route path="/daniel" element={<Daniel/>}/>
