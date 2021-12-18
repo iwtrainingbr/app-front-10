@@ -1,5 +1,8 @@
 import * as React from 'react';
 import {Link} from "react-router-dom";
+import {Divider, Drawer, List, ListItem, ListItemText, ListItemIcon} from "@mui/material";
+import {Home, Add, Settings, Logout, Favorite} from "@mui/icons-material";
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,12 +17,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
 export default function Navbar() {
-  const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  const [sidebar, setSidebar] = React.useState(false);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -31,6 +30,34 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <Drawer open={sidebar} onClose={() => setSidebar(false)}>
+        Menu
+
+        <List>
+          <ListItem button>
+            <ListItemIcon><Home/></ListItemIcon>
+            <ListItemText>Inicio</ListItemText>
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><Add/></ListItemIcon>
+            <ListItemText>Cadastro</ListItemText>
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><Settings/></ListItemIcon>
+            <ListItemText>Config</ListItemText>
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><Favorite/></ListItemIcon>
+            <ListItemText>Likes</ListItemText>
+          </ListItem>
+          <Divider/>
+          <ListItem button style={{color: 'red'}}>
+            <ListItemIcon><Logout style={{color: 'red'}}/></ListItemIcon>
+            <ListItemText>Sair</ListItemText>
+          </ListItem>
+        </List>
+      </Drawer>
+
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -39,6 +66,7 @@ export default function Navbar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => setSidebar(true)}
           >
             <MenuIcon />
           </IconButton>

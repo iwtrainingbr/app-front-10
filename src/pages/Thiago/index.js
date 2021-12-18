@@ -12,7 +12,7 @@ const decrement =() =>{
   setQuantity(quantity - 1);
 }
 
-const decrement =() =>{
+const add =() =>{
   if (quantity === 10) {
     return;
   }
@@ -35,7 +35,7 @@ const decrement =() =>{
       <hr/>
     <Button variant="outlined" onClick={decrement}>-</Button>
       {quantity}
-    <Button variant="outlined" onClick={decrement}>+</Button>
+    <Button variant="outlined" onClick={add}>+</Button>
     </div>
   )
 }
