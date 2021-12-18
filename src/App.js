@@ -13,6 +13,7 @@ import Test from "./pages/Test";
 import Fabricio from "./pages/Fabricio";
 import Daniel from "./pages/Daniel";
 import Hitalo from "./pages/Hitalo";
+import Thiago from"./pages/Thiago";
 
 import "bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,8 +33,10 @@ export default function App() {
         <Route path="/ajuda" element={<Help/>}/>
         <Route path="/teste" element={<Test/>}/>
         <Route path="/hitalo" element={<Hitalo/>}/>
-        <Route path="/fabricio" element={<Fabricio/>}/> 
+        <Route path="/fabricio" element={<Fabricio/>}/>
         <Route path="/daniel" element={<Daniel/>}/>
+        <Route path="/thiago" element={<Thiago/>}/>
+
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
