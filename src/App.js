@@ -15,6 +15,7 @@ import Daniel from "./pages/Daniel";
 import Hitalo from "./pages/Hitalo";
 import Thiago from"./pages/Thiago";
 import Alessandro from "./pages/Alessandro";
+import AddMovement from "./pages/Movements/AddMovement";
 
 
 import "bootstrap";
@@ -39,7 +40,7 @@ export default function App() {
         <Route path="/daniel" element={<Daniel/>}/>
         <Route path="/thiago" element={<Thiago/>}/>
         <Route path="/alessandro" element={<Alessandro/>}/>
-
+        <Route path="/movimentacoes" element={<AddMovement/>}/>
 
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
