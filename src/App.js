@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import ListCategories from "./pages/Categories/ListCategories";
 import Config from "./pages/Config";
 import NotFound from "./pages/NotFound";
 import RecoverPassword from "./pages/RecoverPassword";
@@ -16,6 +17,7 @@ import Hitalo from "./pages/Hitalo";
 import Thiago from"./pages/Thiago";
 import Alessandro from "./pages/Alessandro";
 import AddMovement from "./pages/Movements/AddMovement";
+import ListMovements from "./pages/Movements/ListMovements";
 
 
 import "bootstrap";
@@ -35,13 +37,14 @@ export default function App() {
         <Route path="/cadastro" element={<Register/>}/>
         <Route path="/ajuda" element={<Help/>}/>
         <Route path="/teste" element={<Test/>}/>
+        <Route path="/categorias" element={<ListCategories/>}/>
         <Route path="/hitalo" element={<Hitalo/>}/>
         <Route path="/fabricio" element={<Fabricio/>}/>
         <Route path="/daniel" element={<Daniel/>}/>
         <Route path="/thiago" element={<Thiago/>}/>
         <Route path="/alessandro" element={<Alessandro/>}/>
         <Route path="/movimentacoes" element={<AddMovement/>}/>
-
+        <Route path="/movimentacoes" element={<ListMovements/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
