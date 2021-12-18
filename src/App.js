@@ -11,6 +11,7 @@ import Report from "./pages/Report";
 import Register from "./pages/Register";
 import Help from "./pages/Help";
 import Test from "./pages/Test";
+import AddCategory from"./pages/Categories/AddCategory";
 import Fabricio from "./pages/Fabricio";
 import Daniel from "./pages/Daniel";
 import Hitalo from "./pages/Hitalo";
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/cadastro" element={<Register/>}/>
         <Route path="/ajuda" element={<Help/>}/>
         <Route path="/teste" element={<Test/>}/>
+        <Route path="/categorias/nova" element={<AddCategory/>}/>
         <Route path="/categorias" element={<ListCategories/>}/>
         <Route path="/hitalo" element={<Hitalo/>}/>
         <Route path="/fabricio" element={<Fabricio/>}/>
