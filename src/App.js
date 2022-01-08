@@ -45,7 +45,7 @@ export default function App() {
         <Route path="/daniel" element={<Daniel/>}/>
         <Route path="/thiago" element={<Thiago/>}/>
         <Route path="/alessandro" element={<Alessandro/>}/>
-        <Route path="/movimentacoes" element={<AddMovement/>}/>
+        <Route path="/movimentacoes/add" element={<AddMovement/>}/>
         <Route path="/movimentacoes" element={<ListMovements/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/*" element={<NotFound/>}/>

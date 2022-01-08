@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Divider, Drawer, List, ListItem, ListItemText, ListItemIcon} from "@mui/material";
-import {Home, Add, Settings, Logout, Favorite} from "@mui/icons-material";
+import {Home, TrendingUp, Article, Paid, Settings, Logout, Favorite} from "@mui/icons-material";
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,15 +10,20 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
+
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [sidebar, setSidebar] = React.useState(false);
+
+  const redirect = (url) => {
+    navigate(url);
+    setSidebar(false);
+  }
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -34,24 +39,28 @@ export default function Navbar() {
         Menu
 
         <List>
-          <ListItem button>
+          <ListItem button onClick={() => redirect('/')}>
             <ListItemIcon><Home/></ListItemIcon>
             <ListItemText>Inicio</ListItemText>
           </ListItem>
-          <ListItem button>
-            <ListItemIcon><Add/></ListItemIcon>
-            <ListItemText>Cadastro</ListItemText>
+          <ListItem button onClick={() => redirect('/movimentacoes')}>
+            <ListItemIcon><TrendingUp/></ListItemIcon>
+            <ListItemText>Movimentações</ListItemText>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={() => redirect('/config')}>
             <ListItemIcon><Settings/></ListItemIcon>
             <ListItemText>Config</ListItemText>
           </ListItem>
-          <ListItem button>
-            <ListItemIcon><Favorite/></ListItemIcon>
-            <ListItemText>Likes</ListItemText>
+          <ListItem button onClick={() => redirect('/extrato')}>
+            <ListItemIcon><Paid/></ListItemIcon>
+            <ListItemText>Extrato</ListItemText>
+          </ListItem>
+          <ListItem button onClick={() => redirect('/categorias')}>
+            <ListItemIcon><Article/></ListItemIcon>
+            <ListItemText>Categorias</ListItemText>
           </ListItem>
           <Divider/>
-          <ListItem button style={{color: 'red'}}>
+          <ListItem button onClick={() => redirect('/login')} style={{color: 'red'}}>
             <ListItemIcon><Logout style={{color: 'red'}}/></ListItemIcon>
             <ListItemText>Sair</ListItemText>
           </ListItem>
