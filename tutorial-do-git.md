@@ -6,8 +6,8 @@
 #### Pra atualizar o seu branch (local) principal
  - git pull origin main
 
-#### Serve pra criar um novo branch, e mudar pra ele
- - git checkout -b novo-branch
+#### Serve pra criar um novo branch, e mudar pra ele - Se não houver branch é o primeiro a ser feito.
+ - git checkout -b novo-branch (nome do seu branch)
 
 //faz as alterações nos codigos, de acordo com o solicitaddo na issue/task
 
@@ -18,6 +18,6 @@
  - git commit -m "mensagem"
 
 #### Envia (empurra) as modificações pro branch que você criou
-git push origin novo-branch
+git push origin novo-branch (nome do branch criado)
 
 // Agora voçê precisa clicar/copiar o link e abrir o Pull Request
