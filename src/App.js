@@ -30,26 +30,28 @@ export default function App() {
     <BrowserRouter>
       <Navbar/>
 
-      <Routes>
-        <Route path="/config" element={<Config/>}/>
-        <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/relatorio" element={<Report/>}/>
-        <Route path="/cadastro" element={<Register/>}/>
-        <Route path="/ajuda" element={<Help/>}/>
-        <Route path="/teste" element={<Test/>}/>
-        <Route path="/categorias/nova" element={<AddCategory/>}/>
-        <Route path="/categorias" element={<ListCategories/>}/>
-        <Route path="/hitalo" element={<Hitalo/>}/>
-        <Route path="/fabricio" element={<Fabricio/>}/>
-        <Route path="/daniel" element={<Daniel/>}/>
-        <Route path="/thiago" element={<Thiago/>}/>
-        <Route path="/alessandro" element={<Alessandro/>}/>
-        <Route path="/movimentacoes/add" element={<AddMovement/>}/>
-        <Route path="/movimentacoes" element={<ListMovements/>}/>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/*" element={<NotFound/>}/>
-      </Routes>
+      <div className="content">
+        <Routes>
+          <Route path="/config" element={<Config/>}/>
+          <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/relatorio" element={<Report/>}/>
+          <Route path="/cadastro" element={<Register/>}/>
+          <Route path="/ajuda" element={<Help/>}/>
+          <Route path="/teste" element={<Test/>}/>
+          <Route path="/categorias/nova" element={<AddCategory/>}/>
+          <Route path="/categorias" element={<ListCategories/>}/>
+          <Route path="/hitalo" element={<Hitalo/>}/>
+          <Route path="/fabricio" element={<Fabricio/>}/>
+          <Route path="/daniel" element={<Daniel/>}/>
+          <Route path="/thiago" element={<Thiago/>}/>
+          <Route path="/alessandro" element={<Alessandro/>}/>
+          <Route path="/movimentacoes/add" element={<AddMovement/>}/>
+          <Route path="/movimentacoes" element={<ListMovements/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/*" element={<NotFound/>}/>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
