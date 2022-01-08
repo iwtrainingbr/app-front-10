@@ -54,7 +54,7 @@ export default function ListMovements () {
           <Fab onClick={() => navigate('/movimentacoes/add')} sx={actionButtonStyle} color="primary">
             <Add/>
           </Fab>
-      </div>
+    </div>
   )
 
 }
