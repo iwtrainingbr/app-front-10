@@ -10,8 +10,9 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
+  Divider,
   Select,
-  TextField,  
+  TextField,
 } from '@mui/material';
 
 
@@ -23,9 +24,12 @@ export default function AddMovement() {
   const handleChange = (event) => {
     setCateg(event.target.value);
   };
+
   return (
     <div>
-    <br/>
+      <h2>Nova Movimentação</h2>
+      <Divider/>
+      <br/>
       <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
@@ -46,13 +50,14 @@ export default function AddMovement() {
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '25ch' },
+          '& > :not(style)': { marginTop: 2, marginBottom: 2},
         }}
         noValidate
         autoComplete="off"
       >
-        <TextField id="outlined-basic" label="Valor (R$)" variant="outlined" size="small" />
+        <TextField fullWidth id="outlined-basic" label="Valor (R$)" variant="outlined" />
       </Box>
+
       <FormControl component="fieldset">
         <FormLabel component="legend">Tipo de Movimentação</FormLabel>
         <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
@@ -61,7 +66,10 @@ export default function AddMovement() {
         </RadioGroup>
       </FormControl>
       <br/>
-      <Button variant="contained" disableElevation>
+      <Divider/>
+      <br/>
+
+      <Button fullWidth variant="contained">
         Adicionar
       </Button>
     </div>
