@@ -15,9 +15,6 @@ import {
   TextField,
 } from '@mui/material';
 
-
-
-
 export default function AddMovement() {
   const [categ, setCateg] = React.useState('');
 
