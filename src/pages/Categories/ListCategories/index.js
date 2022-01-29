@@ -1,3 +1,4 @@
+import {useState, useEffect} from "react";
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -16,7 +17,6 @@ import Typography from '@mui/material/Typography';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useNavigate} from "react-router-dom";
-import {useState} from 'react';
 
 import {Fab, Card, CardContent} from "@mui/material";
 import {Add} from "@mui/icons-material";
@@ -25,8 +25,16 @@ import {Add} from "@mui/icons-material";
 export default function Categories() {
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
-  const [data, setData] = useState ([1,2,3,4])
+  const [data, setData] = useState ([])
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+      fetch('http://localhost:8000/categories')
+        .then(response => response.json())
+        .then(response => setData(response));
+  }, []);
+
 
   const actionButtonStyle = {
     position: 'absolute',
@@ -34,7 +42,7 @@ export default function Categories() {
     bottom: 16
   };
 
-  const CategoryItem = () => {
+  const CategoryItem = (props) => {
     return (
         <ListItem
           secondaryAction={
@@ -49,7 +57,7 @@ export default function Categories() {
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary="Single-line item"
+            primary={props.data.name}
             secondary={""}
           />
         </ListItem>
@@ -68,7 +76,7 @@ export default function Categories() {
           <Card>
             <CardContent>
               <List dense={dense}>
-                {data.map(() => (<CategoryItem/>))}
+                {data.map((categoryData) => (<CategoryItem data={categoryData}/>))}
               </List>
             </CardContent>
           </Card>
