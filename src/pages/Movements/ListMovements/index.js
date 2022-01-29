@@ -1,7 +1,12 @@
+import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-
 import {Fab, Typography} from "@mui/material";
 import {Add} from "@mui/icons-material";
+import {
+  Card,
+  CardContent,
+  Divider,
+} from "@mui/material";
 
 import * as React from 'react';
 import List from '@mui/material/List';
@@ -14,47 +19,44 @@ import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 export default function ListMovements () {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const [data, setData] = useState([1, 2, 3, 4, 5, 7, 8, 9]);
 
-  const actionButtonStyle = {
-    position: 'absolute',
-    right: 16,
-    bottom: 16
-  };
+    const actionButtonStyle = {
+      position: 'absolute',
+      right: 16,
+      bottom: 16
+    };
 
-  return (
-      <div>
-      <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        <ListItem secondaryAction = {<Typography color="error">-10</Typography>}>
+    const MovementItem = () => {
+      return (
+        <ListItem  secondaryAction = {<Typography color="error">-10</Typography>}>
           <ListItemAvatar>
             <Avatar>
               <ImageIcon />
             </Avatar>
           </ListItemAvatar>
           <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+          <Divider/>
         </ListItem>
-        <ListItem secondaryAction = {<Typography color="error">-10</Typography>}>
-          <ListItemAvatar>
-            <Avatar>
-              <WorkIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Work" secondary="Jan 7, 2014" />
-        </ListItem>
-        <ListItem secondaryAction = {<Typography color="blue">10</Typography>}>
-          <ListItemAvatar>
-            <Avatar>
-              <BeachAccessIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Vacation" secondary="July 20, 2014" />
-        </ListItem>
-      </List>
+      );
+    };
+
+
+    return (
+      <div>
+          <h2 align="center"> - Movimentações - </h2>
+
+          <Divider/>
+
+          <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+            {data.map(() => (<MovementItem/>))}
+          </List>
+
 
           <Fab onClick={() => navigate('/movimentacoes/add')} sx={actionButtonStyle} color="primary">
             <Add/>
           </Fab>
-    </div>
+      </div>
   )
-
 }
