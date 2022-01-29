@@ -1,59 +1,39 @@
+import {useState} from "react";
+
+const ReportItem= () => {
+  return (
+    <tr>
+        <td>Pão</td>
+        <td>29/1/2022</td>
+        <td>5.000</td>
+      </tr>
+  )
+}
+
 export default function Report() {
+  const [data, setData] = useState([1, 2, 3]);
   return (
       <div>
-      <div classname="col-md-10 offset-1">
-        <section classname="row mt-5">
+      <div class="col-md-10 offset-1">
+        <section class="row mt-5">
 
-           <div classname="col-md-10 offset-1" >
+           <div class="col-md-10 offset-1" >
 
 
-         <table classname="table table-striped table-hover">
-           <thead classname="table-dark">
+         <table width="100%"  class="table table-striped table-hover">
+           <thead class="table-dark">
              <tr>
-               <th classname="text-center "colspan="5">Tabela dos alunos</th>
+               <th class="text-center "colspan="5">Extrato</th>
              </tr>
              <tr>
-               <th>NOME</th>
-               <th>EMAIL</th>
-               <th>HORÁRIO</th>
+               <th>Item</th>
+               <th>Data</th>
+               <th>Preço</th>
                <th></th>
                <th></th>
               </tr>
            </thead>
-            <tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-            </tr><tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-            </tr><tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-            </tr><tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-              </tr><tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-            </tr><tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-              </tr><tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-            </tr>
-            <tr>
-              <td>-- --</td>
-              <td>-- --</td>
-              <td>-- --</td>
-            </tr>
+            {data.map(() => (<ReportItem/>))}
          </table>
        </div>
       </section>
