@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {Fab, Typography} from "@mui/material";
 import {Add} from "@mui/icons-material";
@@ -20,7 +20,13 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 export default function ListMovements () {
     const navigate = useNavigate();
-    const [data, setData] = useState([1, 2, 3, 4, 5, 7, 8, 9]);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      fetch('http://localhost:8000/movements')
+        .then(response => response.json())
+        .then(response => setData(response));
+  }, []);
 
     const actionButtonStyle = {
       position: 'absolute',
@@ -28,16 +34,17 @@ export default function ListMovements () {
       bottom: 16
     };
 
-    const MovementItem = () => {
+    const MovementItem = (props) => {
       return (
-        <ListItem  secondaryAction = {<Typography color="error">-10</Typography>}>
-          <ListItemAvatar>
-            <Avatar>
-              <ImageIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-          <Divider/>
+        <ListItem  secondaryAction = {<Typography color={props.data.type === 'in'? 'green' : 'error'}>{props.data.price}</Typography>}>
+            <ListItemAvatar>
+              <Avatar>
+                <ImageIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItem  secondaryAction = {<Typography>{props.data.description}</Typography>}>
+            <Divider/>
+          </ListItem>
         </ListItem>
       );
     };
@@ -50,7 +57,7 @@ export default function ListMovements () {
           <Divider/>
 
           <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-            {data.map(() => (<MovementItem/>))}
+            {data.map((movementData) => (<MovementItem data= {movementData}/>))}
           </List>
 
 
