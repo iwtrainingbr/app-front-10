@@ -1,17 +1,19 @@
 import {useState} from "react";
 
-const ReportItem= () => {
-  return (
-    <tr>
-        <td>Pão</td>
-        <td>29/1/2022</td>
-        <td>5.000</td>
-      </tr>
-  )
-}
-
 export default function Report() {
-  const [data, setData] = useState([1, 2, 3]);
+  const [data, setData] = useState([1, 2, 3, 4, 5, 6, 7]);
+
+  const ReportItem= () => {
+    return (
+      <tr>
+          <td>Pão</td>
+          <td>29/1/2022</td>
+          <td>5.000</td>
+        </tr>
+    )
+  }
+
+
   return (
       <div>
       <div class="col-md-10 offset-1">

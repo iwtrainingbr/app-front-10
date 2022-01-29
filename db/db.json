@@ -1,0 +1,86 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Cursos"
+        },
+        {
+            "id": 2,
+            "name": "Alimentação"
+        },
+        {
+            "id": 3,
+            "name": "Lazer"
+        },
+        {
+            "id": 4,
+            "name": "Outros"
+        }
+    ],
+    "stores": [
+        {
+            "id": 1,
+            "name": "Iwtraining",
+            "category": "Cursos",
+            "address": "Rua Carolino de Aquino, 445 - Fatima",
+            "photo": "https://lh5.googleusercontent.com/p/AF1QipMl0xb8EQEKNgwAmue0uJib_BIMyR8C_npdHVtP=w600-h485-p-k-no"
+        },
+        {
+            "id": 2,
+            "name": "Cantinho do Frango",
+            "category": "Alimentação",
+            "address": "Rua Torres Câmara, 71 - Aldeota",
+            "photo": "https://media-cdn.tripadvisor.com/media/photo-s/18/10/54/cd/cantinho-do-frango-desde.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Bulls beer house",
+            "category": "Lazer",
+            "address": "R. Gustavo Sampaio, 800 - Parquelândia",
+            "photo": "https://cearensidade.com.br/wp-content/uploads/2018/09/Foto-Bulls-Beer-House.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Barneys Burguer",
+            "category": "Alimentação",
+            "address": "R. Gustavo Sampaio, 800 - Parquelândia",
+            "photo": "https://cearensidade.com.br/wp-content/uploads/2018/09/Foto-Bulls-Beer-House.jpg"
+        }
+    ],
+    "movements": [
+        {
+            "id": 1,
+            "description": "Almoço com a galera do curso",
+            "price": 95.80,
+            "type": "out",
+            "date": "2021-01-22 13:37",
+            "payment": "Cartão de Crédito",
+            "store": "Cantinho do Frango"
+        },
+        {
+            "id": 2,
+            "description": "Mensalidade do curso",
+            "price": 299.90,
+            "type": "out",
+            "date": "2021-01-23 17:32",
+            "payment": "Boleto",
+            "store": "Iwtraining"
+        },
+        {
+            "id": 3,
+            "description": "Ualisson me pagou o que devia",
+            "price": 200,
+            "type": "in",
+            "date": "2021-01-23 19:21",
+            "payment": "PIX"
+        },
+        {
+            "id": 4,
+            "description": "Achei 20 reais na rua",
+            "price": 20,
+            "type": "in",
+            "date": "2021-01-22 22:40",
+            "payment": "Dinheiro"
+        }
+    ]
+}
