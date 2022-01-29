@@ -19,7 +19,7 @@ import Thiago from"./pages/Thiago";
 import Alessandro from "./pages/Alessandro";
 import AddMovement from "./pages/Movements/AddMovement";
 import ListMovements from "./pages/Movements/ListMovements";
-
+import Carrinho from "./pages/Carrinho";
 
 import "bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -48,6 +48,7 @@ export default function App() {
           <Route path="/alessandro" element={<Alessandro/>}/>
           <Route path="/movimentacoes/add" element={<AddMovement/>}/>
           <Route path="/movimentacoes" element={<ListMovements/>}/>
+          <Route path="/carrinho" element={<Carrinho/>}/>
           <Route path="/" element={<Home/>}/>
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
