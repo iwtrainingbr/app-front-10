@@ -11,7 +11,7 @@ import {
 export default function AddCategory (){
   const navigate = useNavigate();
 
-const [name, setName] = useState('');
+  const [name, setName] = useState('');
 
   const handleName = (event) => {
     setName(event.target.value)
