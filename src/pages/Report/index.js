@@ -1,14 +1,25 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {
+  Card,
+  CardContent,
+} from "@mui/material";
+
 
 export default function Report() {
-  const [data, setData] = useState([1, 2, 3, 4, 5, 6, 7]);
+  const [data, setData] = useState([]);
 
-  const ReportItem= () => {
+  useEffect(() => {
+    fetch('http://localhost:8000/movements')
+      .then(response => response.json())
+      .then(response => setData(response));
+  }, []);
+
+  const ReportItem = (props) => {
     return (
       <tr>
-          <td>Pão</td>
-          <td>29/1/2022</td>
-          <td>5.000</td>
+          <td>{props.data.description}</td>
+          <td>{props.data.date}</td>
+          <td>R${props.data.price}</td>
         </tr>
     )
   }
@@ -16,12 +27,8 @@ export default function Report() {
 
   return (
       <div>
-      <div class="col-md-10 offset-1">
-        <section class="row mt-5">
-
-           <div class="col-md-10 offset-1" >
-
-
+      <Card>
+        <CardContent>
          <table width="100%"  class="table table-striped table-hover">
            <thead class="table-dark">
              <tr>
@@ -31,15 +38,12 @@ export default function Report() {
                <th>Item</th>
                <th>Data</th>
                <th>Preço</th>
-               <th></th>
-               <th></th>
-              </tr>
+            </tr>
            </thead>
-            {data.map(() => (<ReportItem/>))}
+            {data.map((movementData) => (<ReportItem data={movementData} />))}
          </table>
-       </div>
-      </section>
-    </div>
+         </CardContent>
+       </Card>
     </div>
   )
 }
