@@ -36,7 +36,7 @@ export default function App() {
           <Route path="/config" element={<Config/>}/>
           <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/relatorio" element={<Report/>}/>
+          <Route path="/extrato" element={<Report/>}/>
           <Route path="/cadastro" element={<Register/>}/>
           <Route path="/ajuda" element={<Help/>}/>
           <Route path="/teste" element={<Test/>}/>
