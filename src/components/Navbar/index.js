@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import StoreIcon from "@mui/icons-material/Store";
 
 
 export default function Navbar() {
@@ -59,6 +60,12 @@ export default function Navbar() {
             <ListItemIcon><Article/></ListItemIcon>
             <ListItemText>Categorias</ListItemText>
           </ListItem>
+
+          <ListItem button onClick={() => redirect('/estabelecimentos')}>
+            <ListItemIcon><StoreIcon/></ListItemIcon>
+            <ListItemText>Estabelecimentos</ListItemText>
+          </ListItem>
+
           <Divider/>
           <ListItem button onClick={() => redirect('/login')} style={{color: 'red'}}>
             <ListItemIcon><Logout style={{color: 'red'}}/></ListItemIcon>
