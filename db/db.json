@@ -38,6 +38,13 @@
             "category": "Lazer",
             "address": "R. Gustavo Sampaio, 800 - Parquelândia",
             "photo": "https://cearensidade.com.br/wp-content/uploads/2018/09/Foto-Bulls-Beer-House.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Barneys Burguer",
+            "category": "Alimentação",
+            "address": "R. Gustavo Sampaio, 800 - Parquelândia",
+            "photo": "https://cearensidade.com.br/wp-content/uploads/2018/09/Foto-Bulls-Beer-House.jpg"
         }
     ],
     "movements": [

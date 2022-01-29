@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {
   Card,
   CardContent,
@@ -6,25 +6,36 @@ import {
   CardActionArea,
   Typography,
   Divider,
+  Chip,
 } from "@mui/material";
 import "./styles.css";
 
 export default function Stores() {
-  const [data, setData] = useState([1, 2, 3, 4]);
+  const [data, setData] = useState([]);
 
-  const StoreItem = () => {
+  useEffect(() => {
+      fetch('http://localhost:8000/stores')
+        .then(response => response.json())
+        .then(response => setData(response));
+  }, []);
+
+
+  const StoreItem = (props) => {
     return (
       <Card style={{marginTop: 15}}>
         <CardActionArea onClick={() => alert('oi')}>
-          <CardMedia component="img" image="https://media-cdn.tripadvisor.com/media/photo-s/18/10/54/cd/cantinho-do-frango-desde.jpg"/>
+          <CardMedia style={{height: 160}} component="img" image={props.data.photo}/>
           <CardContent>
             <Typography color="primary" variant="h5">
-              Cantinho do Frango
+              #{props.data.id} {props.data.name}
             </Typography>
             <Divider/>
+
             <Typography color="gray">
-              Rua Carolino de Aquino, 445 - Fatima
+              {props.data.address}
             </Typography>
+
+            <Chip color="primary" label={props.data.category}/>
 
           </CardContent>
         </CardActionArea>
@@ -32,13 +43,14 @@ export default function Stores() {
     )
   }
 
+
   return (
     <div>
       <h2 align="center"> - Estabelecimentos - </h2>
 
       <Divider/>
 
-      {data.map(() => (<StoreItem/>))}
+      {data.map((storeData) =>  (<StoreItem data={storeData}/>))}
     </div>
   )
 }

@@ -50,7 +50,7 @@ export default function Categories() {
           </ListItemAvatar>
           <ListItemText
             primary="Single-line item"
-            secondary={secondary ? 'Secondary text' : null}
+            secondary={""}
           />
         </ListItem>
     )
@@ -58,7 +58,7 @@ export default function Categories() {
 
   return(
     <div>
-      <Grid container spacing={2}> 
+      <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
           <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
             Categorias
@@ -71,7 +71,7 @@ export default function Categories() {
                 {data.map(() => (<CategoryItem/>))}
               </List>
             </CardContent>
-          </Card> 
+          </Card>
 
 
         </Grid>
