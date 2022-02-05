@@ -64,7 +64,7 @@ export default function Navbar() {
             <ListItemText>Categorias</ListItemText>
           </ListItem>
 
-          <ListItem button onClick={() => redirect('/estabelecimentos')}>
+          <ListItem data-cy="item-category" button onClick={() => redirect('/estabelecimentos')}>
             <ListItemIcon><StoreIcon/></ListItemIcon>
             <ListItemText>Estabelecimentos</ListItemText>
           </ListItem>
