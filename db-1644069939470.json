@@ -1,16 +1,16 @@
 {
   "categories": [
     {
+      "id": 1,
+      "name": "Cursos"
+    },
+    {
       "id": 2,
       "name": "Alimentação"
     },
     {
       "name": "Qualquer coisa",
       "id": 7
-    },
-    {
-      "name": "aaaaa",
-      "id": 8
     }
   ],
   "stores": [

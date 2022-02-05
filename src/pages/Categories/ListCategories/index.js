@@ -87,7 +87,7 @@ export default function Categories() {
     return (
         <ListItem
           secondaryAction={
-            <IconButton onClick={() => removeCategory(props.data.id)} edge="end" aria-label="delete">
+            <IconButton data-cy={"remove-cat-" + props.data.id} onClick={() => removeCategory(props.data.id)} edge="end" aria-label="delete">
               <DeleteIcon />
             </IconButton>
           }
