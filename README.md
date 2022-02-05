@@ -9,5 +9,5 @@
 - `npm install -g json-server`
 
 ### Executando a aplicação
-- `npx npx json-server --watch db/db.json --port 8000`
+- `npx json-server --watch db/db.json --port 8000`
 - `npm start`

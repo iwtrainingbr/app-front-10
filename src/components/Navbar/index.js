@@ -37,7 +37,10 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Drawer open={sidebar} onClose={() => setSidebar(false)}>
-        Menu
+        <div align="center" style={{padding: 5}}>
+          <img width="40%" src="/img/logo.png" alt="Logo"/>
+        </div>
+        <Divider/>
 
         <List>
           <ListItem button onClick={() => redirect('/')}>

@@ -9,20 +9,8 @@
       "name": "Alimentação"
     },
     {
-      "id": 3,
-      "name": "Lazer"
-    },
-    {
-      "id": 4,
-      "name": "Outros"
-    },
-    {
-      "name": "fsadfsdfsdf",
-      "id": 4
-    },
-    {
-      "name": "azsdfasdasd",
-      "id": 5
+      "name": "Qualquer coisa",
+      "id": 7
     }
   ],
   "stores": [

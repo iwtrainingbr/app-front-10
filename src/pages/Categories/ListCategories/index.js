@@ -18,14 +18,19 @@ import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useNavigate} from "react-router-dom";
 
-import {Fab, Card, CardContent} from "@mui/material";
+import {Fab, Card, Alert, CardContent, Button, Snackbar} from "@mui/material";
 import {Add} from "@mui/icons-material";
 
+import "./styles.css";
 
 export default function Categories() {
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
-  const [data, setData] = useState ([])
+  const [data, setData] = useState ([]);
+  const [message, setMessage] = useState(false);
+  const [cancel, setCancel] = useState(false);
+  const [dataBackup, setDataBackup] = useState([]);
+  const [idToRemove, setIdToRemove] = useState(null);
 
   const navigate = useNavigate();
 
@@ -42,11 +47,47 @@ export default function Categories() {
     bottom: 16
   };
 
+  const removeCategory = (id) => {
+    setMessage(true);
+    setCancel(false);
+
+    //guarda a categoria a ser removida, pra qualquer coisa adicionar depois de novo
+    setDataBackup(JSON.parse(JSON.stringify(data)));
+
+    //remove temporariamente da tela
+    setData(
+      data.filter(category => category.id !== id)
+    );
+
+    setIdToRemove(id);
+  }
+
+  const confirmRemove = () => {
+    setMessage(false);
+
+    if (cancel === true) {
+      return;
+    }
+
+    fetch('http://localhost:8000/categories/'+idToRemove, {
+      method: 'DELETE'
+    });
+  }
+
+  const cancelRemove = () => {
+    setCancel(true);
+    setMessage(false);
+
+
+    setData(dataBackup);
+    setDataBackup([]);
+  }
+
   const CategoryItem = (props) => {
     return (
         <ListItem
           secondaryAction={
-            <IconButton edge="end" aria-label="delete">
+            <IconButton onClick={() => removeCategory(props.data.id)} edge="end" aria-label="delete">
               <DeleteIcon />
             </IconButton>
           }
@@ -66,6 +107,17 @@ export default function Categories() {
 
   return(
     <div>
+
+    <Snackbar
+      open={message}
+      autoHideDuration={6000}
+      onClose={() => confirmRemove()}
+      message="Categoria excluída"
+      action={
+        <Button color="secondary" onClick={() => cancelRemove()}>DESFAZER</Button>
+      }
+    />
+
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
           <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
@@ -73,7 +125,7 @@ export default function Categories() {
           </Typography>
           <hr/> {/* Final da parte superior */}
 
-          <Card>
+          <Card className={message && 'backgroundDark'}>
             <CardContent>
               <List dense={dense}>
                 {data.map((categoryData) => (<CategoryItem data={categoryData}/>))}
