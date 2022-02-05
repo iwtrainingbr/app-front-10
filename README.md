@@ -11,3 +11,7 @@
 ### Executando a aplicação
 - `npx json-server --watch db/db.json --port 8000`
 - `npm start`
+
+
+### Executando os Testes
+- `npx cypress open`

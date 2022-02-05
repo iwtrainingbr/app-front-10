@@ -70,7 +70,7 @@ export default function Navbar() {
           </ListItem>
 
           <Divider/>
-          <ListItem button onClick={() => redirect('/login')} style={{color: 'red'}}>
+          <ListItem data-cy="item-logout" button onClick={() => redirect('/login')} style={{color: 'red'}}>
             <ListItemIcon><Logout style={{color: 'red'}}/></ListItemIcon>
             <ListItemText>Sair</ListItemText>
           </ListItem>
@@ -80,6 +80,7 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <IconButton
+            data-cy="menu"
             size="large"
             edge="start"
             color="inherit"
