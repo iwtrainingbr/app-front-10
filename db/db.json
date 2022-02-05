@@ -11,6 +11,50 @@
     {
       "name": "Qualquer coisa",
       "id": 7
+    },
+    {
+      "name": "",
+      "id": 8
+    },
+    {
+      "name": "Combustível",
+      "id": 9
+    },
+    {
+      "name": "Combustível",
+      "id": 10
+    },
+    {
+      "name": "Combustível",
+      "id": 11
+    },
+    {
+      "name": "Combustível",
+      "id": 12
+    },
+    {
+      "name": "Combustível",
+      "id": 13
+    },
+    {
+      "name": "Categoria teste 0.2574816266065707",
+      "id": 14
+    },
+    {
+      "name": "Categoria teste 0.44520216581859207",
+      "id": 15
+    },
+    {
+      "name": "Categoria teste 70",
+      "id": 16
+    },
+    {
+      "name": "Categoria teste 3",
+      "id": 17
+    },
+    {
+      "name": "Categoria teste 33",
+      "id": 18
     }
   ],
   "stores": [

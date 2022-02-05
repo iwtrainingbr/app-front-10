@@ -36,7 +36,7 @@ export default function AddCategory (){
         <Divider/>
         <br/>
 
-        <TextField onChange={handleName} value={name} fullWidth label="Nome" style={{marginBottom: 15}}/>
+        <TextField data-cy="input-cat-name" onChange={handleName} value={name} fullWidth label="Nome" style={{marginBottom: 15}}/>
 
         <Button onClick={save} color="primary" variant="contained" fullWidth>PRONTO</Button>
       </div>

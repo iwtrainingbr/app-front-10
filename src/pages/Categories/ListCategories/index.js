@@ -137,7 +137,7 @@ export default function Categories() {
         </Grid>
       </Grid>
 
-      <Fab onClick={() => navigate('/categorias/nova')} sx={actionButtonStyle} color="primary">
+      <Fab data-cy="add-categories" onClick={() => navigate('/categorias/nova')} sx={actionButtonStyle} color="primary">
         <Add/>
       </Fab>
 

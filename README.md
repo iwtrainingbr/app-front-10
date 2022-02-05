@@ -12,6 +12,8 @@
 - `npx json-server --watch db/db.json --port 8000`
 - `npm start`
 
+### Insalar o Cypress
+- `npm install cypress`
 
 ### Executando os Testes
 - `npx cypress open`
